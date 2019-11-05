@@ -1,0 +1,47 @@
+﻿<div class="container">
+  <h1>Welcome to Expenses Portal</h1>
+
+
+ <select  name="id" #id="ngModel" [(ngModel)]="expense_code" (change)="getFunction()">
+    <option>--Select Expense code--</option>
+    <option *ngFor="let e of expenses ">{{e.expense_code}}</option>
+  </select>
+
+
+  <div *ngIf="expense_code" >
+  <div>
+    
+    <!-- <div class="alert alert-danger" *ngIf="!(ExpenseService.Expenses[0])">
+        ID not found
+      </div> 
+     -->
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">EXPENSE CODE</th>
+            <th scope="col">EXPENSE TYPE</th>
+            <th scope="col">EXPENSE DESCRIPTION</th>
+            
+          </tr>
+        </thead>
+    
+        <tbody *ngFor="let expense of ExpenseService.Expenses" >
+          <tr>
+            <th>{{expense.expense_code}}</th>
+            <td>{{expense.expense_type}}</td>
+            <td>{{expense.expense_description}}</td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+  </div>
+
+  
+<!-- <div class="collapse" id="collapseExample" *ngIf="!flag">
+  <h1>The list is empty</h1>
+
+</div>
+   -->
+  </div>
+
+ 
