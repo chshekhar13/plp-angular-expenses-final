@@ -1,14 +1,14 @@
-﻿<div class="container">
+<div class="container">
   <h1>Welcome to Expenses Portal</h1>
 
 
- <select  name="id" #id="ngModel" [(ngModel)]="expense_code" (change)="getFunction()">
+ <select  name="id" #id="ngModel" [(ngModel)]="expense_type" (change)="getAll()">
     <option>--Select Expense code--</option>
-    <option *ngFor="let e of expenses ">{{e.expense_code}}</option>
+    <option *ngFor="let e of expenses ">{{e.expense_type}}</option>
   </select>
 
 
-  <div *ngIf="expense_code" >
+  <div *ngIf="code" >
   <div>
     
     <!-- <div class="alert alert-danger" *ngIf="!(ExpenseService.Expenses[0])">
@@ -39,9 +39,6 @@
   
 <!-- <div class="collapse" id="collapseExample" *ngIf="!flag">
   <h1>The list is empty</h1>
-
 </div>
    -->
   </div>
-
- 
